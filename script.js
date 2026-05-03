@@ -56,3 +56,27 @@ function updateCart() {
 
 // load awal
 tampilkanProduk(produk);
+
+function checkoutWhatsApp() {
+  const nomorWA = "6281234567890"; // ganti nomor kamu
+
+  if (cart.length === 0) {
+    alert("Keranjang masih kosong!");
+    return;
+  }
+
+  let pesan = "Halo kak, saya mau order:\n\n";
+
+  let total = 0;
+
+  cart.forEach((item, i) => {
+    pesan += `${i + 1}. ${item.nama} - Rp ${item.harga}\n`;
+    total += item.harga;
+  });
+
+  pesan += `\nTotal: Rp ${total}\n\nTerima kasih 😊`;
+
+  const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+
+  window.open(url, "_blank");
+}
