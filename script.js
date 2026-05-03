@@ -58,8 +58,7 @@ function updateCart() {
 tampilkanProduk(produk);
 
 function checkoutWhatsApp() {
-  const nomorWA = "6281234567890"; // ganti nomor kamu
-
+  const nomorWA = "6282343133894"; //
   if (cart.length === 0) {
     alert("Keranjang masih kosong!");
     return;
